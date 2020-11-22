@@ -26,3 +26,19 @@ public final int hashCode() {
 		result = 31 * result + Arrays.hashCode(this.coord);    
 	return result;
 }
+
+
+// Comparator
+private void fun(){
+	Comparator<Point> comparator = new Comparator<>(){
+		@Override
+		public int compare(Point p, Point q){
+			return Integer.compare(p.distane, q.distance);
+		}
+	};
+	
+	PriorityQueue<Point> maxHeap = new PriorityQueue<>(comparator.reversed());
+	maxHeap.offer(somePoint);
+	maxHeap.offer(someOtherPoint);
+	Point maximumDistancePoint = maxHeap.poll();
+}
