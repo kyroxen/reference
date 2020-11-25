@@ -131,6 +131,18 @@ private void create frequencyMap(int[] nums){
 	}
 	
 }
-
-
+	  
+// Some comparator examples
+// https://mkyong.com/java8/java-8-lambda-comparator-example/ 
+// https://stackoverflow.com/questions/20399660/how-to-create-this-java-comparator
+private void doSomeWorkWithSort(TripRouteMapDetails tripRouteMapDetailsList){
+	
+	// Way 1
+	if(CollectionUtils.isNotEmpty(tripRouteMapDetailsList))
+		tripRouteMapDetailsList.sort(Comparator.comparingInt(TripRouteMapDetails::getRoutePriority));
+	
+	// Way 2
+	if(CollectionUtils.isNotEmpty(tripRouteMapDetailsList))
+		tripRouteMapDetailsList.sort((TripRouteMapDetails trmd1, TripRouteMapDetails trmd2) -> Integer.compare(trmd1.getRoutePriority(), trmd2.getRoutePriority()));
+}
 
