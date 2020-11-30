@@ -159,3 +159,29 @@ private void testRegex(){
 	System.out.println(pattern.matcher(" ").matches()); //false
 	System.out.println(pattern.matcher("dbui23").matches()); //false
 }
+
+/**
+To work with binary search in java
+*/
+private void testBinarySearch(){
+	List<Integer> numbers = new ArrayList<>(Arrays.asList( 2, 4, 5, 7, 11, 13, 17, 19, 23, 29));
+
+	System.out.println("index of 1 is " + Collections.binarySearch(numbers, 1));
+	System.out.println("index of 3 is " + Collections.binarySearch(numbers, 3));
+	System.out.println("index of 9 is " + Collections.binarySearch(numbers, 9));
+	System.out.println("index of 4 is " + Collections.binarySearch(numbers, 4));
+
+	/*
+	-----------------------
+	The output looks like:
+	-----------------------
+
+	-ve value means to insert at the index: -(insertion point) - 1
+
+	index of 1 is -1 
+	index of 3 is -2
+	index of 9 is -5
+	index of 4 is  1
+
+	*/
+}
