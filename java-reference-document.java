@@ -146,3 +146,16 @@ private void doSomeWorkWithSort(TripRouteMapDetails tripRouteMapDetailsList){
 		tripRouteMapDetailsList.sort((TripRouteMapDetails trmd1, TripRouteMapDetails trmd2) -> Integer.compare(trmd1.getRoutePriority(), trmd2.getRoutePriority()));
 }
 
+/**
+To work with regex here is an example
+*/
+private void testRegex(){
+	Pattern pattern = Pattern.compile("^\\d{10}$");
+
+	System.out.println(pattern.matcher("").matches()); //false
+	System.out.println(pattern.matcher("123").matches()); //false
+	System.out.println(pattern.matcher("0000000000").matches()); //true
+	System.out.println(pattern.matcher("0111111111").matches()); //true
+	System.out.println(pattern.matcher(" ").matches()); //false
+	System.out.println(pattern.matcher("dbui23").matches()); //false
+}
