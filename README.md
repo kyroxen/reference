@@ -1,2 +1,2 @@
-# java-reference-doc
-Simple java reference document with some snippets of code.
+# references
+References that I need. Sometimes.
