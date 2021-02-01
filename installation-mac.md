@@ -2,15 +2,18 @@
 
 ### .bash_profile OR .bashrc
 https://joshstaiger.org/archives/2005/07/bash_profile_vs.html
+
 https://scriptingosx.com/2017/04/about-bash_profile-and-bashrc-on-macos/
 
 BUT, OSX now uses the default shell as zsh. To migrate the scripts from bash to zsh. Read this for info:
-https://carlosroso.com/the-right-way-to-migrate-your-bash-profile-to-zsh/
 
+https://carlosroso.com/the-right-way-to-migrate-your-bash-profile-to-zsh/ 
+
+----
 ### Homebrew
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
-
+----
 ### Java OpenJdk8
 `brew tap adoptopenjdk/openjdk`
 
@@ -18,12 +21,12 @@ https://carlosroso.com/the-right-way-to-migrate-your-bash-profile-to-zsh/
 
 `java -version`
 
-
+----
 ### Docker
 Can be done from the following:
 https://hub.docker.com/editions/community/docker-ce-desktop-mac/
 
-
+----
 ### MySql
 Version 8 can be installed from the oracle's website. To install 5.7:
 
@@ -37,10 +40,11 @@ Version 8 can be installed from the oracle's website. To install 5.7:
 
 `brew link mysql@5.7 --force`
 
+----
 ### IntelliJ Idea ignore vcs files pesty notification solution?
 https://www.jetbrains.com/help/idea/enabling-version-control.html#associate_directory_with_VCS
 
-
+----
 ### Redis
 `brew install redis`
 
@@ -48,7 +52,7 @@ https://www.jetbrains.com/help/idea/enabling-version-control.html#associate_dire
 
 `redis-cli ping`
 
-
+----
 ### RabbitMq
 `brew install rabbitmq`
 
