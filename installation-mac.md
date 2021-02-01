@@ -75,3 +75,7 @@ And we can access the RabbitMQ dashboard from http://localhost:15672 ,
 the default username and password is guest and guest respectively.
 
 To stop RabbitMQ press `Ctrl + C`
+
+----
+### Install maven
+https://maven.apache.org/install.html
