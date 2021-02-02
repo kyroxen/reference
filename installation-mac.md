@@ -1,4 +1,4 @@
-# Install stuff on OSX
+# Install stuff on OSX + Configurations
 
 ### .bash_profile OR .bashrc
 https://joshstaiger.org/archives/2005/07/bash_profile_vs.html
@@ -79,3 +79,26 @@ To stop RabbitMQ press `Ctrl + C`
 ----
 ### Install maven
 https://maven.apache.org/install.html
+
+---
+### Generating an SSH key
+An SSH key consists of a pair of files. One is the private key, which should never be shared with anyone. The other is the public key. The other file is a public key which allows you to log into the servers. When you generate the keys, you will use ssh-keygen to store the keys in a safe location so you can bypass the login prompt when connecting to your instances.
+
+To generate SSH keys:
+
+`ssh-keygen -t rsa`
+
+This starts the key generation process. When you execute this command, the ssh-keygen utility prompts you to indicate where to store the key.
+
+Press the `ENTER` key to accept the default location. The ssh-keygen utility prompts you for a passphrase.
+
+Type in a passphrase. You can also hit the `ENTER` key to accept the default (no passphrase). However, this is not recommended.
+Warning! You will need to enter the passphrase a second time to continue.
+
+After you confirm the passphrase, the system generates the key pair.
+
+Private key location: `~/.ssh/id_rsa`
+
+Public key location: `~/.ssh/id_rsa.pub`
+
+To copy pub key to clipboard: `pbcopy < ~/.ssh/id_rsa.pub`
