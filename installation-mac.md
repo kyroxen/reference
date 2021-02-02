@@ -44,6 +44,14 @@ Version 8 can be installed from the oracle's website. To install 5.7:
 ### IntelliJ Idea ignore vcs files pesty notification solution?
 https://www.jetbrains.com/help/idea/enabling-version-control.html#associate_directory_with_VCS
 
+`Also add your local run configuration profile in .git/info/exclude` 
+
+The advantage of .gitignore is that it can be checked into the repository itself, unlike .git/info/exclude. Another advantage is that you can have multiple .gitignore files, one inside each directory/subdirectory for directory specific ignore rules, unlike .git/info/exclude.
+So, .gitignore is available across all clones of the repository. Therefore, in large teams all people are ignoring the same kind of files Example *.db, *.log. And you can have more specific ignore rules because of multiple .gitignore 
+
+.git/info/exclude is available for individual clones only, hence what one person ignores in his clone is not available in some other person's clone. For example, if someone uses Eclipse for development it may make sense for that developer to add .build folder to .git/info/exclude because other devs may not be using Eclipse.
+In general, files/ignore rules that have to be universally ignored should go in .gitignore, and otherwise files that you want to ignore only on your local clone should go into .git/info/exclude
+
 ----
 ### Redis
 `brew install redis`
