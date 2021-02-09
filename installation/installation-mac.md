@@ -73,7 +73,8 @@ export HOMEBREW_RABBITMQ=/usr/local/Cellar/rabbitmq/3.7.11/sbin/
 export PATH=$PATH:$HOMEBREW_RABBITMQ
 ```
 
-To start the server: `rabbitmq-server`
+To start the server: `rabbitmq-server` or `brew serrvices start rabbitmq`
+To stop the server: `brew serrvices stop rabbitmq`
 
 To be noted that RabbitMQ server and CLI tools are inside the directory:
 

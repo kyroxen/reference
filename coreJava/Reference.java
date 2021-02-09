@@ -153,9 +153,23 @@ fail-fast behavior of iterators should be used only to detect bugs.
 
     }
 
-    // Some comparator examples
-    // https://mkyong.com/java8/java-8-lambda-comparator-example/ 
-    // https://stackoverflow.com/questions/20399660/how-to-create-this-java-comparator
+    /**
+     * COMPARATOR
+     * COMPARATOR
+     * COMPARATOR
+     * COMPARATOR
+     * COMPARATOR
+     * COMPARATOR
+     * COMPARATOR
+     * <p>
+     *  Some comparator examples
+     * @see
+     *      <a href="https://mkyong.com/java8/java-8-lambda-comparator-example/">mykong</a>
+     *      <a href="https://stackoverflow.com/questions/20399660/how-to-create-this-java-comparator">stack overflow</a>
+     * </p>
+     * @param objects a list of objects to be sorted
+     */
+
     private void doSomeWorkWithSort(List<Object> objects) {
 
         // Way 1
