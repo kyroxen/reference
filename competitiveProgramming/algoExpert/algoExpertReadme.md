@@ -1,2 +1,0 @@
-# AlgoExpert Package
-Drink code.
