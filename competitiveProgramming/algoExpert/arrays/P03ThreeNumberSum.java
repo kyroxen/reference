@@ -8,6 +8,9 @@ import java.util.List;
  * Question: Find all sets of three integers in sorted order such that their sum equals the target sum.
  * Input: "array": [12, 3, 1, 2, -6, 5, -8, 6], "targetSum": 0
  * Output: [[-8, 2, 6], [-8, 3, 5], [-6, 1, 5]]
+ *
+ * @see
+ * <a href = "https://www.algoexpert.io/questions/Three%20Number%20Sum">AE Link</a>
  */
 public class P03ThreeNumberSum {
 

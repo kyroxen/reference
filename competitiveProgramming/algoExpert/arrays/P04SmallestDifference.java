@@ -2,7 +2,23 @@ package competitiveProgramming.algoExpert.arrays;
 
 import java.util.Arrays;
 
+/**
+ * Given two arrays, find the pair from two with minimum distance between them.
+ * Input: [-1, 5, 10, 20, 28, 3] and secondArray: [26, 134, 135, 15, 17]
+ * Output: [28, 26]
+ *
+ * @see
+ * <a href = "https://www.algoexpert.io/questions/Smallest%20Difference">AE Link</a>
+ */
 public class P04SmallestDifference {
+
+    /**
+     * Time complexity : O(n.log(n) + m.log(m))
+     *
+     * @param array1
+     * @param array2
+     * @return
+     */
     public static int[] smallestDifference(int[] array1, int[] array2) {
         Arrays.sort(array1);
         Arrays.sort(array2);
