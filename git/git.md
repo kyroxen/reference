@@ -1,9 +1,9 @@
 # GIT ~~(not literally)~~
-___
+
 
 ## Prune
 `git gc --prune=now`
-___
+
 ## Delete Branch
 `git branch -d feature/not-good`
 
@@ -16,7 +16,7 @@ Or
 `git push origin --delete feature/not-good`
 
 The distinction? Read this: https://git-scm.com/docs/git-branch
-___
+
 ## Rename Branch
 1. If you are on the branch you want to rename:
    
@@ -33,7 +33,7 @@ ___
 4. Reset the upstream branch for the new-name local branch. First, switch to the branch and then:
    
    `git push origin -u new-name`
-___
+
 ## Move uncommitted existing edits into a new branch
 Use the following:
 
@@ -48,11 +48,11 @@ and commit to your new branch with:
 `git commit -m "<Brief description of this commit>"`
 
 The changes in the working directory and changes staged in index do not belong to any branch yet. This changes where those changes would end in. You don't reset your original branch, it stays as it is. The last commit on <old-branch> will still be the same. Therefore you checkout -b and then commit.
-___
+
 ## Delete staged and un-staged changes
 To throw away all my staged and un-staged changes, forget everything on my current local branch and make it exactly the same as origin/master.
 `git reset --hard origin/master`
-___
+
 ## About git reset
 git reset do be knowing five "modes": 
 1. soft
