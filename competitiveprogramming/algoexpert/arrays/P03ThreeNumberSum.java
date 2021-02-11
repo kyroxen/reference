@@ -1,4 +1,4 @@
-package competitiveProgramming.algoExpert.arrays;
+package competitiveprogramming.algoexpert.arrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;
