@@ -3,15 +3,15 @@ package competitiveprogramming.algoexpert.arrays;
 import java.util.List;
 
 /**
- * Question: Determine if the given sequence is a sub-sequence of a larger entity.
- * <p>
+ * Determine if the given sequence is a sub-sequence of a larger entity.
+ *
  * Definition: A sub sequence means it has the characters in order from the larger sequence
  * but it is not necessary to have all the characters. Some might be missing in between
- * </p>
- *
- * <p>
  * Example: For the string a,b,c,d,e,f : a,c,f is a valid sub-sequence
- * </p>
+ *
+ * Input: array = [5, 1, 22, 25, 6, -1, 8, 10]
+ *        sequence = [1, 6, -1, 10]
+ * Output: true
  *
  * @see <a href = "https://www.algoexpert.io/questions/Validate%20Subsequence">AE Link</a>
  * <br>

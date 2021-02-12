@@ -1,0 +1,30 @@
+
+V	java:S106â"9Replace this use of System.out or System.err by a logger.(ÈÛ­‰8ş±Ç¬ø.
+V	java:S106ã"9Replace this use of System.out or System.err by a logger.(ÑÁÕœ8ş±Ç¬ø.
+E
+java:S11446"(Remove this unused private "fun" method.(¥ÓÌö8ş±Ç¬ø.
+S
+java:S1144İ"5Remove this unused private "testBinarySearch" method.(—­Ú8ş±Ç¬ø.
+X	java:S125t"<This block of commented-out lines of code should be removed.(ú›šå8ş±Ç¬ø.
+[	java:S106È"9Replace this use of System.out or System.err by a logger.(áÿĞãüÿÿÿÿ8ş±Ç¬ø.
+[
+java:S1481L"9Remove this unused "maximumDistancePoint" local variable.(‰¡ÏÃüÿÿÿÿ8ş±Ç¬ø.
+]	java:S125B"<This block of commented-out lines of code should be removed.(¶ıÇ­úÿÿÿÿ8ş±Ç¬ø.
+c
+java:S1126'"AReplace this if-then-else statement by a single return statement.(±ıè‚úÿÿÿÿ8ş±Ç¬ø.
+[	java:S106É"9Replace this use of System.out or System.err by a logger.(£©İ†ÿÿÿÿÿ8ş±Ç¬ø.
+Z
+java:S1144ƒ"7Remove this unused private "createFrequencyMap" method.(äŸ›±ûÿÿÿÿ8ş±Ç¬ø.
+[	java:S106Ì"9Replace this use of System.out or System.err by a logger.(áÿĞãüÿÿÿÿ8ş±Ç¬ø.
+[	java:S106á"9Replace this use of System.out or System.err by a logger.(Æ» âûÿÿÿÿ8ş±Ç¬ø.
+Z
+java:S1144­"7Remove this unused private "doSomeWorkWithSort" method.(§µ¸şÿÿÿÿ8ş±Ç¬ø.
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ãå„8ş±Ç¬ø.
+V	java:S106Í"9Replace this use of System.out or System.err by a logger.(ñ»Îô8ş±Ç¬ø.
+[	java:S106Ê"9Replace this use of System.out or System.err by a logger.(ÙıÛ×úÿÿÿÿ8ş±Ç¬ø.
+j
+java:S1854L"HRemove this useless assignment to local variable "maximumDistancePoint".(‰¡ÏÃüÿÿÿÿ8ş±Ç¬ø.
+Q
+java:S1144Å".Remove this unused private "testRegex" method.(ÌæË÷üÿÿÿÿ8ş±Ç¬ø.
+V	java:S106Ë"9Replace this use of System.out or System.err by a logger.(‰²Õ½8ş±Ç¬ø.
+V	java:S106à"9Replace this use of System.out or System.err by a logger.(š´äø8ş±Ç¬ø.

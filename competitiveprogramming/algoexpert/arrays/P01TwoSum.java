@@ -4,8 +4,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 /**
- * Question: Given an input array, and a target sum, find two numbers in the array such that
+ * Given an input array, and a target sum, find two numbers in the array such that
  * they add up to the target sum.
+ *
+ * Input: [3, 5, -4, 8, 11, 1, -1, 6] and targetSum = 10
+ * Output: [-1, 11]
  *
  * @see
  * <a href="https://www.algoexpert.io/questions/Two%20Number%20Sum">AE link</a>

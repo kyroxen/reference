@@ -4,7 +4,8 @@ import java.util.Arrays;
 
 /**
  * Given two arrays, find the pair from two with minimum distance between them.
- * Input: [-1, 5, 10, 20, 28, 3] and secondArray: [26, 134, 135, 15, 17]
+ *
+ * Input: firstArray = [-1, 5, 10, 20, 28, 3] secondArray: [26, 134, 135, 15, 17]
  * Output: [28, 26]
  *
  * @see
