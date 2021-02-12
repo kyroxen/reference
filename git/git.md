@@ -49,6 +49,47 @@ and commit to your new branch with:
 
 The changes in the working directory and changes staged in index do not belong to any branch yet. This changes where those changes would end in. You don't reset your original branch, it stays as it is. The last commit on <old-branch> will still be the same. Therefore you checkout -b and then commit.
 
+## Change commit author and email using rebase
+If your commit history is with following commit hashes (root) A - B - C - D - E - F (head) and you want to change the 
+author of C and D, then you would: 
+
+1. Specify `git rebase -i B` (if you need to edit A, use git rebase -i --root)
+
+
+2. Change the lines for both C and D from `pick` to `edit`
+
+
+3. Exit the editor (for vim, this would be pressing Esc and then typing :wq).
+
+
+4. Once the rebase started, it would first pause at C
+
+
+5. You would then run `git commit --amend --author="John Doe <john.doe@email.com>"`
+
+
+6. Then `git rebase --continue`
+
+
+7. It would pause again at D
+
+
+8. Then you would run `git commit --amend --author="John Doe <john.doe@email.com>"`
+
+
+9. `git rebase --continue`
+
+
+10. The rebase would complete.
+
+
+11. Use `git push -f` to update your origin with the updated commits.
+
+Also refer: https://www.git-tower.com/learn/git/faq/change-author-name-email/
+
+
+https://stackoverflow.com/questions/1338728/delete-commits-from-a-branch-in-git
+
 ## Delete staged and un-staged changes
 To throw away all my staged and un-staged changes, forget everything on my current local branch and make it exactly the same as origin/master.
 `git reset --hard origin/master`
