@@ -88,7 +88,7 @@ author of C and D, then you would:
 Also refer: https://www.git-tower.com/learn/git/faq/change-author-name-email/
 
 
-https://stackoverflow.com/questions/1338728/delete-commits-from-a-branch-in-git
+https://stackoverflow.com/questions/3042437/how-to-change-the-commit-author-for-one-specific-commit
 
 ## Delete staged and un-staged changes
 To throw away all my staged and un-staged changes, forget everything on my current local branch and make it exactly the same as origin/master.
