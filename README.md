@@ -1,5 +1,5 @@
 # References
-References that I need. Sometimes. [https://kyroxen.github.io/reference/](Visit the Github hosted pages!)
+References that I need. Sometimes.
 
 
 * [installating stuff on osx](installation-mac.md)
