@@ -1,10 +1,10 @@
 # RMQ
 ___
 
-Find the official rmq tutorial forked repo which has the exemplar code at the link https://github.com/kyroxen/rabbitmq-tutorials/tree/test/play from the official 
-tutorial hyperlink: https://www.rabbitmq.com/tutorials/tutorial-one-spring-amqp.html 
-for spring based maven project, and the link: https://www.rabbitmq.com/tutorials/tutorial-one-java.html for plain java 
-based project whose code I'm writing here for illustaration:
+Find the official rmq tutorial forked repo which has the exemplar code at the link [https://github.com/kyroxen/rabbitmq-tutorials/tree/test/play]() from the official 
+tutorial hyperlink: [https://www.rabbitmq.com/tutorials/tutorial-one-spring-amqp.html]()
+for spring based maven project, and the link: [https://www.rabbitmq.com/tutorials/tutorial-one-java.html]() for plain java 
+based project whose code I'm writing here for illustration:
 
 To publish the message to rmq see the class Send.java:
 ```

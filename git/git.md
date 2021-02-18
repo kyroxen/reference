@@ -15,7 +15,7 @@ Or
 
 `git push origin --delete feature/not-good`
 
-The distinction? Read this: https://git-scm.com/docs/git-branch
+The distinction? Read this: [https://git-scm.com/docs/git-branch]()
 
 ## Rename Branch
 1. If you are on the branch you want to rename:
@@ -85,10 +85,10 @@ author of C and D, then you would:
 
 11. Use `git push -f` to update your origin with the updated commits.
 
-Also refer: https://www.git-tower.com/learn/git/faq/change-author-name-email/
+Also refer: [https://www.git-tower.com/learn/git/faq/change-author-name-email/}()
 
 
-https://stackoverflow.com/questions/3042437/how-to-change-the-commit-author-for-one-specific-commit
+[https://stackoverflow.com/questions/3042437/how-to-change-the-commit-author-for-one-specific-commit]()
 
 ## Delete staged and un-staged changes
 To throw away all my staged and un-staged changes, forget everything on my current local branch and make it exactly the same as origin/master.
