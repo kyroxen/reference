@@ -1,4 +1,4 @@
-package competitiveprogramming.algoexpert.arrays;
+package competitiveprogramming.arrays;
 
 /**
  * Given an array of integers, determine if the array is monotonic

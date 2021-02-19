@@ -1,4 +1,4 @@
-package competitiveprogramming.algoexpert.arrays;
+package competitiveprogramming.arrays;
 
 import java.util.Arrays;
 import java.util.HashSet;
