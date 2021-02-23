@@ -3,6 +3,7 @@ package competitiveprogramming.arrays;
 import java.util.List;
 
 /**
+ * [E]
  * Determine if the given sequence is a sub-sequence of a larger entity.
  *
  * Definition: A sub sequence means it has the characters in order from the larger sequence
@@ -55,7 +56,6 @@ public class P02IsSubsequence {
      * @return
      */
     public static boolean isValidSubsequence(List<Integer> array, List<Integer> sequence) {
-        // Write your code here.
         int prevPos = -1;
         boolean ans = false;
         for(int i = 0 ; i < sequence.size(); i++){

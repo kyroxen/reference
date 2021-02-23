@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * [M]
  * Find all sets of three integers in sorted order such that their sum equals the target sum.
  *
  * Input: array = [12, 3, 1, 2, -6, 5, -8, 6] ; targetSum = 0

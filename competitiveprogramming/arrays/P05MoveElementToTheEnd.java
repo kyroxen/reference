@@ -3,7 +3,9 @@ package competitiveprogramming.arrays;
 import java.util.List;
 
 /**
- * Given an array of integers and an input integer, move all instances of the integer to the end of the array in-place.
+ * [M]
+ * Given an array of integers and an input integer, move all instances of the
+ * integer to the end of the array in-place.
  *
  * Input: array = [2, 1, 2, 2, 2, 3, 4, 2] toMove = 2
  * Output: [1,3,4,2,2,2,2,2]

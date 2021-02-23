@@ -1,6 +1,7 @@
 package competitiveprogramming.arrays;
 
 /**
+ * [M]
  * Given an array of integers, determine if the array is monotonic
  *
  * Definition:

@@ -3,6 +3,7 @@ package competitiveprogramming.arrays;
 import java.util.Arrays;
 
 /**
+ * [M]
  * Given two arrays, find the pair from two with minimum distance between them.
  *
  * Input: firstArray = [-1, 5, 10, 20, 28, 3] secondArray: [26, 134, 135, 15, 17]

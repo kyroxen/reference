@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 
 /**
+ * [E]
  * Given an input array, and a target sum, find two numbers in the array such that
  * they add up to the target sum.
  *
@@ -44,7 +45,6 @@ public class P01TwoSum {
      * @return pair of integers that add up to the target sum
      */
     public static int[] usingTwoPointers(int[] array, int target) {
-        // Write your code here.
         Arrays.sort(array);
         int l = 0;
         int h = array.length - 1;
