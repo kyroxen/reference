@@ -11,16 +11,32 @@ Read this for info
 > [https://carlosroso.com/the-right-way-to-migrate-your-bash-profile-to-zsh/]() 
 
 ## Homebrew
+To note: Cask is not needed now, it is inside homebrew!
 ````
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ````
 
 ## Java OpenJdk8
-````
-brew tap adoptopenjdk/openjdk
-brew install --cask adoptopenjdk8
-java -version
-````
+1. Download jdk from https://adoptopenjdk.net/
+2. Install
+3. Install jenv: `brew install jenv`
+4. Complete jenv installation by adding these to ~/.zshrc
+```
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+```
+5. Restart terminal session.
+6. Check `jenv versions` and then find all the java installation's path by running this command `/usr/libexec/java_home -V`
+7. Add them to jenv if not added by `jenv add /Library/Java/JavaVirtualMachines/openjdk-11.0.1.jdk/Contents/Home`
+8. Check `jenv versions`
+9. Set global `jenv global 1.8.0.122`
+10. Set project based java version 
+```
+    cd project_directory
+    jenv local 11.0.1
+```
+Also @See: 
+https://medium.com/@brunofrascino/working-with-multiple-java-versions-in-macos-9a9c4f15615a
 
 ## Docker
 Can be done from the following:

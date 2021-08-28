@@ -1,5 +1,7 @@
 # GIT ~~(not literally)~~
 
+## Get User
+git config --list
 
 ## Prune
 `git gc --prune=now`
