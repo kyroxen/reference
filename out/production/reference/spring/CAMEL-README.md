@@ -1,5 +1,0 @@
-# Apache Camel
-
----
-
-wip
