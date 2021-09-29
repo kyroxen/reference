@@ -1,9 +1,12 @@
+# Create network
+docker network create --driver bridge dev-network
+
 # MYSQL
 
 ```docker run -d \
 --name mysql_container \
 --cap-add=sys_nice \
---network my-mysql-network \
+--network dev-network \
 -v ~/elk/mysql/data-volume:/var/lib/mysql \
 -p 3307:3306 \
 -e MYSQL_ROOT_PASSWORD=my_root_pwd \
@@ -16,7 +19,7 @@ mysql:8.0.26
 docker run \
   --name mysql_exporter_container \
   -p 9104:9104 \
-  --network my-mysql-network  \
+  --network dev-network  \
   -e DATA_SOURCE_NAME='exporter:1234567890@(mysql_container:3306)/' \
   prom/mysqld-exporter --collect.global_status --collect.info_schema.innodb_metrics \
  --collect.auto_increment.columns \
@@ -40,7 +43,7 @@ docker run \
 ```
 docker run -d \
   --name node-exporter-container \
-  --network my-mysql-network \
+  --network dev-network \
   -p 9100:9100 \
   prom/node-exporter
 ```
@@ -50,7 +53,7 @@ docker run -d \
 ```
 docker run -d \
 --name cadvisor-container \
---network my-mysql-network \
+--network dev-network \
 -p 8081:8080 \
 --volume /var/run:/var/run:rw \
 --volume /sys:/sys:ro \
@@ -64,7 +67,7 @@ google/cadvisor:latest
 ```
 docker run -d \
 --name influxdb-container \
---network my-mysql-network \
+--network dev-network \
 -p 8086:8086 \
 -v ~/elk/influxdb/volume:/var/lib/influxdb2 \
 influxdb:latest
@@ -81,7 +84,7 @@ docker exec -it influxdb-container influx config create --config-name myConfig \
 # PROMETHEUS
 
 ```
-docker run -d --name prometheus-container -p 9090:9090 --network my-mysql-network -v ~/elk/prometheus/config:/etc/prometheus -v ~/elk/prometheus/data:/data prom/prometheus
+docker run -d --name prometheus-container -p 9090:9090 --network dev-network -v ~/elk/prometheus/config:/etc/prometheus -v ~/elk/prometheus/data:/data prom/prometheus
 
 ```
 
@@ -100,9 +103,9 @@ docker run -d --name prometheus-container -p 9090:9090 --network my-mysql-networ
 ```
 
 # DOCKER LATCH CONTAINERS ON THE BRIDGE
-> docker network connect my-mysql-network 
+> docker network connect dev-network 
 
-> docker network connect my-mysql-network cdvisor-container
+> docker network connect dev-network cdvisor-container
 
 # MISC
 
