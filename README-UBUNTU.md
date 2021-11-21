@@ -1,4 +1,4 @@
-##Install Git
+## Install Git
 > sudo apt-get install git-all
 
 ## Install Docker
