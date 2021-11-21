@@ -1,3 +1,6 @@
+##Install Git
+> sudo apt-get install git-all
+
 ## Install Docker
 Installation instructions for the docker ce
 > https://docs.docker.com/engine/install/ubuntu/
