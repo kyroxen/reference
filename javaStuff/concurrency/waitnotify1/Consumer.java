@@ -1,4 +1,4 @@
-package corejava.concurrency.waitnotify1;
+package javaStuff.concurrency.waitnotify1;
 
 public class Consumer extends Thread {
 

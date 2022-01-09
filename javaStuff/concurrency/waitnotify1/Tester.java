@@ -1,4 +1,4 @@
-package corejava.concurrency.waitnotify1;
+package javaStuff.concurrency.waitnotify1;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package corejava.concurrency.uuid;
+package javaStuff.concurrency.uuid;
 
 public class UUIdGeneratorSync {
 
