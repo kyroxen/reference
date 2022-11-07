@@ -17,6 +17,8 @@ public class BinaryTreeTest {
     Node<Integer> root = BinaryTree.parseTree(arr);
     // BTreePrinter.printVertical(root);
     BTreePrinter.printHorizontal(root);
+
+    BinaryTree.print(root);
   }
 
   private static List<String> getUsingScanner() {

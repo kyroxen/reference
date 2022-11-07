@@ -5,17 +5,6 @@ import java.util.*;
 
 public class BinaryTree {
 
-  static class Result {
-    int index;
-    boolean isRight;
-    Node<Integer> node;
-
-    Result(int index, boolean isRight){
-      this.index = index;
-      this.isRight = isRight;
-    }
-  }
-
   public static Node<Integer> parseTree(List<String> list) {
     System.out.println(list);
     return construct(list, list.iterator());
@@ -46,15 +35,11 @@ public class BinaryTree {
   public static <T> void print(Node<T> root){
     Map<T, List<T>> levelOrderTraversal = levelOrderTraversal(root);
     System.out.print(levelOrderTraversal);
-//    for (List<T> level : levelOrderTraversal) {
-//      System.out.println();
-//      System.out.print(level);
-//    }
   }
 
   public static <T> Map<T, List<T>> levelOrderTraversal(Node<T> root) {
     if (root == null) {
-      return null;
+      return Collections.emptyMap();
     }
     Map<T, List<T>> parentToChildrenMap = new LinkedHashMap<>();
     Queue<Node<T>> queue = new ArrayDeque<>();
@@ -66,12 +51,19 @@ public class BinaryTree {
       while (size > 0) {
         Node<T> poll = queue.poll();
         if (poll != null) {
-          levelList.add(poll.getValue());
-          if(poll.getLeft() != null)queue.offer(poll.getLeft());
-          if(poll.getRight() != null)queue.offer(poll.getRight());
+          Node<T> left = poll.getLeft();
+          Node<T> right = poll.getRight();
+
+          if(left != null) {
+            queue.offer(left);
+            levelList.add(left.getValue());
+          }
+          if(right != null) {
+            queue.offer(right);
+            levelList.add(right.getValue());
+          }
         }
         size--;
-        //if(poll != null ) parentToChildrenMap.computeIfAbsent(poll.getValue(), k -> new ArrayList<>()).addAll(levelList);
       }
 
     }
