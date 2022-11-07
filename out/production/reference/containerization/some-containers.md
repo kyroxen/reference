@@ -13,6 +13,11 @@ docker network create --driver bridge dev-network
 mysql:8.0.26
 ```
 
+To take data dump:
+```
+docker exec mysql-container /usr/bin/mysqldump -u root --password=my-password my-db-name > backup.sql
+```
+
 # MYSQL EXPORTER
 
 ```

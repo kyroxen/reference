@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="ahocorasick" type="repository">
+    <properties maven-id="org.ahocorasick:ahocorasick:0.6.3" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/ahocorasick/ahocorasick/0.6.3/ahocorasick-0.6.3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/ahocorasick/ahocorasick/0.6.3/ahocorasick-0.6.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
