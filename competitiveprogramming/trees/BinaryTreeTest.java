@@ -1,5 +1,7 @@
 package competitiveprogramming.trees;
 
+import competitiveprogramming.trees.node.BTreeNode;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,15 +12,24 @@ public class BinaryTreeTest {
     return s.isEmpty() ? List.of() : Arrays.asList(s.split(" "));
   }
 
-  // 1 2 4 x x 5 x x 3 x x
-  // 5 4 3 x 8 x 1 x x x 6 x x
+  /**
+   * Sample test cases:
+   * <p>
+   *   1 2 4 x x 5 x x 3 x x
+   * </p>
+   * <p>
+   *   5 4 3 x 8 x 1 x x x 6 x x
+   * </p>
+   * <p>
+   *   1 2 4 10 x x x 5 x x 3 6 x x 7 8 x x 9 x x
+   * </p>
+   *
+   * @param args
+   */
   public static void main(String[] args) {
     List<String> arr = getUsingScanner();
-    Node<Integer> root = BinaryTree.parseTree(arr);
-    // BTreePrinter.printVertical(root);
-    BTreePrinter.printHorizontal(root);
-
-    BinaryTree.print(root);
+    BTreeNode<Integer> root = BinaryTreeHelper.parseTree(arr);
+    BinaryTreeHelper.printHorizontal(root);
   }
 
   private static List<String> getUsingScanner() {

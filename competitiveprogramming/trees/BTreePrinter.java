@@ -1,5 +1,7 @@
 package competitiveprogramming.trees;
 
+import competitiveprogramming.trees.node.BTreeNode;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -13,44 +15,44 @@ public class BTreePrinter {
     throw new IllegalStateException("Utility class");
   }
 
-  public static <T> void printHorizontal(Node<T> node) {
-    StringBuilder stringBuilder = toString(node, new StringBuilder(), true, new StringBuilder());
-    System.out.println(stringBuilder.toString());
+  public static <T> void printHorizontal(BTreeNode<T> bTreeNode) {
+    StringBuilder result = new StringBuilder();
+    toString(bTreeNode, new StringBuilder(), true, result);
+    System.out.println(result);
   }
 
-  private static <T> StringBuilder toString(Node<T> node, StringBuilder prefix, boolean isTail, StringBuilder sb) {
-    if (node.getRight() != null) {
+  private static <T> void toString(BTreeNode<T> bTreeNode, StringBuilder prefix, boolean isLeft, StringBuilder result) {
+    if (bTreeNode.getRight() != null) {
       toString(
-          node.getRight(),
-          new StringBuilder().append(prefix).append(isTail ? Constants.LINE_SEP : Constants.SPACE_SEP),
+          bTreeNode.getRight(),
+          new StringBuilder().append(prefix).append(isLeft ? Constants.LINE_SEP : Constants.SPACE_SEP),
           false,
-          sb);
+          result);
     }
 
-    sb.append(prefix)
-        .append(isTail ? Constants.LEFT : Constants.RIGHT)
-        .append(node.getValue().toString())
+    result.append(prefix)
+        .append(isLeft ? Constants.LEFT : Constants.RIGHT)
+        .append(bTreeNode.getValue().toString())
         .append(Constants.NEW_LINE);
 
-    if (node.getLeft() != null) {
+    if (bTreeNode.getLeft() != null) {
       toString(
-          node.getLeft(),
-          new StringBuilder().append(prefix).append(isTail ? Constants.SPACE_SEP : Constants.LINE_SEP),
+          bTreeNode.getLeft(),
+          new StringBuilder().append(prefix).append(isLeft ? Constants.SPACE_SEP : Constants.LINE_SEP),
           true,
-          sb);
+          result);
     }
-    return sb;
   }
 
 
-  public static <T extends Comparable<?>> void printVertical(Node<T> root) {
+  public static <T extends Comparable<?>> void printVertical(BTreeNode<T> root) {
     int maxLevel = BTreePrinter.maxLevel(root);
 
     printNodeInternal(Collections.singletonList(root), 1, maxLevel);
   }
 
-  private static <T extends Comparable<?>> void printNodeInternal(List<Node<T>> nodes, int level, int maxLevel) {
-    if (nodes.isEmpty() || BTreePrinter.isAllElementsNull(nodes))
+  private static <T extends Comparable<?>> void printNodeInternal(List<BTreeNode<T>> bTreeNodes, int level, int maxLevel) {
+    if (bTreeNodes.isEmpty() || BTreePrinter.isAllElementsNull(bTreeNodes))
       return;
 
     int floor = maxLevel - level;
@@ -60,15 +62,15 @@ public class BTreePrinter {
 
     BTreePrinter.printWhitespaces(firstSpaces);
 
-    List<Node<T>> newNodes = new ArrayList<>();
-    for (Node<T> node : nodes) {
-      if (node != null) {
-        System.out.print(node.getValue());
-        newNodes.add(node.getLeft());
-        newNodes.add(node.getRight());
+    List<BTreeNode<T>> newBTreeNodes = new ArrayList<>();
+    for (BTreeNode<T> BTreeNode : bTreeNodes) {
+      if (BTreeNode != null) {
+        System.out.print(BTreeNode.getValue());
+        newBTreeNodes.add(BTreeNode.getLeft());
+        newBTreeNodes.add(BTreeNode.getRight());
       } else {
-        newNodes.add(null);
-        newNodes.add(null);
+        newBTreeNodes.add(null);
+        newBTreeNodes.add(null);
         System.out.print(" ");
       }
 
@@ -77,21 +79,21 @@ public class BTreePrinter {
     System.out.println("");
 
     for (int i = 1; i <= edgeLines; i++) {
-      for (Node<T> node : nodes) {
+      for (BTreeNode<T> BTreeNode : bTreeNodes) {
         BTreePrinter.printWhitespaces(firstSpaces - i);
-        if (node == null) {
+        if (BTreeNode == null) {
           BTreePrinter.printWhitespaces(edgeLines + edgeLines + i + 1);
           continue;
         }
 
-        if (node.getLeft() != null)
+        if (BTreeNode.getLeft() != null)
           System.out.print("/");
         else
           BTreePrinter.printWhitespaces(1);
 
         BTreePrinter.printWhitespaces(i + i - 1);
 
-        if (node.getRight() != null)
+        if (BTreeNode.getRight() != null)
           System.out.print("\\");
         else
           BTreePrinter.printWhitespaces(1);
@@ -102,7 +104,7 @@ public class BTreePrinter {
       System.out.println("");
     }
 
-    printNodeInternal(newNodes, level + 1, maxLevel);
+    printNodeInternal(newBTreeNodes, level + 1, maxLevel);
   }
 
   private static void printWhitespaces(int count) {
@@ -110,11 +112,11 @@ public class BTreePrinter {
       System.out.print(" ");
   }
 
-  private static <T extends Comparable<?>> int maxLevel(Node<T> node) {
-    if (node == null)
+  private static <T extends Comparable<?>> int maxLevel(BTreeNode<T> bTreeNode) {
+    if (bTreeNode == null)
       return 0;
 
-    return Math.max(BTreePrinter.maxLevel(node.getLeft()), BTreePrinter.maxLevel(node.getRight())) + 1;
+    return Math.max(BTreePrinter.maxLevel(bTreeNode.getLeft()), BTreePrinter.maxLevel(bTreeNode.getRight())) + 1;
   }
 
   private static <T> boolean isAllElementsNull(List<T> list) {

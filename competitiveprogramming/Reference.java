@@ -16,67 +16,67 @@ import java.util.regex.Pattern;
  */
 public class Reference {
 
-    private class Point {
+  private class Point {
 
-        private int[] coord;
-        private Double distance;
+    private int[] coord;
+    private Double distance;
 
-        @Override
-        public boolean equals(Object objectToBeChecked) {
-            //To check If these objects are same
-            if (objectToBeChecked == this)
-                return true;
+    @Override
+    public boolean equals(Object objectToBeChecked) {
+      //To check If these objects are same
+      if (objectToBeChecked == this)
+        return true;
 
-            //To check if another is an instance of Point class
-            if (!(objectToBeChecked instanceof Point))
-                return false;
+      //To check if another is an instance of Point class
+      if (!(objectToBeChecked instanceof Point))
+        return false;
 
-            //Logic for equality
-            Point p = (Point) objectToBeChecked;
-            if (p.coord == this.coord)
-                return true;
+      //Logic for equality
+      Point p = (Point) objectToBeChecked;
+      if (p.coord == this.coord)
+        return true;
 
-            if (p.coord[0] == this.coord[0] && p.coord[1] == this.coord[1])
-                return true;
+      if (p.coord[0] == this.coord[0] && p.coord[1] == this.coord[1])
+        return true;
 
-            return false;
-        }
-
-        @Override
-        public final int hashCode() {
-            int result = 17;
-            if (coord != null)
-                result = 31 * result + Arrays.hashCode(this.coord);
-            return result;
-        }
-
-        // Comparator
-        private void fun() {
-            // Suppose we have a class point with a field member distance of type integer
-            // And we want to compare Point objects on this distance field, then we can define 
-            // a local comparator as such:
-            Comparator<Point> comparator = (p, q) -> Double.compare(p.distance, q.distance);
-
-            // T(n) for operations in heap of size = k :
-            // 
-            // To build a heap of size k, the time complexity:
-            // To insert 1 element, log 1
-            // To inset 2 elements, log 1 + log 2
-            // ....
-            // So, to insert k elements, O(log 1 + log 2 + ..... + log k) = O(k log k);
-            //
-            // For the operations, offer() and poll() the time complexity T(n) = O(log k)
-            // And linear time for the remove(Object) and contains(Object) methods; 
-            // And constant time for the retrieval methods -> (peek, element, and size)
-
-
-            PriorityQueue<Point> maxHeap = new PriorityQueue<>(comparator.reversed());
-            maxHeap.offer(new Point());
-            maxHeap.offer(new Point());
-            Point maximumDistancePoint = maxHeap.poll();
-        }
-
+      return false;
     }
+
+    @Override
+    public final int hashCode() {
+      int result = 17;
+      if (coord != null)
+        result = 31 * result + Arrays.hashCode(this.coord);
+      return result;
+    }
+
+    // Comparator
+    private void fun() {
+      // Suppose we have a class point with a field member distance of type integer
+      // And we want to compare Point objects on this distance field, then we can define
+      // a local comparator as such:
+      Comparator<Point> comparator = (p, q) -> Double.compare(p.distance, q.distance);
+
+      // T(n) for operations in heap of size = k :
+      //
+      // To build a heap of size k, the time complexity:
+      // To insert 1 element, log 1
+      // To inset 2 elements, log 1 + log 2
+      // ....
+      // So, to insert k elements, O(log 1 + log 2 + ..... + log k) = O(k log k);
+      //
+      // For the operations, offer() and poll() the time complexity T(n) = O(log k)
+      // And linear time for the remove(Object) and contains(Object) methods;
+      // And constant time for the retrieval methods -> (peek, element, and size)
+
+
+      PriorityQueue<Point> maxHeap = new PriorityQueue<>(comparator.reversed());
+      maxHeap.offer(new Point());
+      maxHeap.offer(new Point());
+      Point maximumDistancePoint = maxHeap.poll();
+    }
+
+  }
 
 /*
 Comments on HashMap from Java 8 documentation:
@@ -125,106 +125,106 @@ on a best-effort basis. Therefore, it would be wrong to write a program that dep
 fail-fast behavior of iterators should be used only to detect bugs.
 */
 
-    // HashMap
+  // HashMap
 // To create a frequency map, the possible syntaxes are:
 
-    private void createFrequencyMap(int[] nums) {
-        HashMap<Integer, Integer> freqMap = new HashMap<>();
+  private void createFrequencyMap(int[] nums) {
+    HashMap<Integer, Integer> freqMap = new HashMap<>();
 
-        // Syntax 1
-        for (int num : nums) {
-            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
-        }
-
-        // Syntax 2
-        for (int x : nums) {
-            freqMap.compute(x, (key, v) -> v == null ? 1 : v + 1);
-        }
-
-        // Syntax 3
-
-        for (int number : nums) {
-            Integer freq = freqMap.get(number);
-            if (freq == null)
-                freqMap.put(number, 1);
-            else
-                freqMap.replace(number, freq + 1);
-        }
-
+    // Syntax 1
+    for (int num : nums) {
+      freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
     }
 
-    /**
-     * COMPARATOR
-     * COMPARATOR
-     * COMPARATOR
-     * COMPARATOR
-     * COMPARATOR
-     * COMPARATOR
-     * COMPARATOR
-     * <p>
-     *  Some comparator examples
-     * @see
-     *      <a href="https://mkyong.com/java8/java-8-lambda-comparator-example/">mykong</a>
-     *      <a href="https://stackoverflow.com/questions/20399660/how-to-create-this-java-comparator">stack overflow</a>
-     * </p>
-     * @param objects a list of objects to be sorted
-     */
-
-    private void doSomeWorkWithSort(List<Object> objects) {
-
-        // Way 1
-        if (objects != null && !objects.isEmpty())
-            objects.sort(Comparator.comparingInt(Object::hashCode));
-
-        // Way 2
-        if (objects != null && !objects.isEmpty())
-            objects.sort((Object instance1, Object instance2) -> Integer.compare(instance1.hashCode(), instance2.hashCode()));
+    // Syntax 2
+    for (int x : nums) {
+      freqMap.compute(x, (key, v) -> v == null ? 1 : v + 1);
     }
 
-    /**
-     * REGEX
-     * REGEX
-     * REGEX
-     * REGEX
-     * <p>
-     * To work with regex here is an example
-     * <p>
-     * REGEX
-     * REGEX
-     * REGEX
-     * REGEX
-     */
-    private void testRegex() {
-        Pattern pattern = Pattern.compile("^\\d{10}$");
+    // Syntax 3
 
-        System.out.println(pattern.matcher("").matches()); //false
-        System.out.println(pattern.matcher("123").matches()); //false
-        System.out.println(pattern.matcher("0000000000").matches()); //true
-        System.out.println(pattern.matcher("0111111111").matches()); //true
-        System.out.println(pattern.matcher(" ").matches()); //false
-        System.out.println(pattern.matcher("dbui23").matches()); //false
+    for (int number : nums) {
+      Integer freq = freqMap.get(number);
+      if (freq == null)
+        freqMap.put(number, 1);
+      else
+        freqMap.replace(number, freq + 1);
     }
 
-    /**
-     * BINARY SEARCH
-     * BINARY SEARCH
-     * BINARY SEARCH
-     * BINARY SEARCH
-     * <p>
-     * To work with binary search in java
-     * <p>
-     * BINARY SEARCH
-     * BINARY SEARCH
-     * BINARY SEARCH
-     * BINARY SEARCH
-     */
-    private void testBinarySearch() {
-        List<Integer> numbers = new ArrayList<>(Arrays.asList(2, 4, 5, 7, 11, 13, 17, 19, 23, 29));
+  }
 
-        System.out.println("index of 1 is " + Collections.binarySearch(numbers, 1));
-        System.out.println("index of 3 is " + Collections.binarySearch(numbers, 3));
-        System.out.println("index of 9 is " + Collections.binarySearch(numbers, 9));
-        System.out.println("index of 4 is " + Collections.binarySearch(numbers, 4));
+  /**
+   * COMPARATOR
+   * COMPARATOR
+   * COMPARATOR
+   * COMPARATOR
+   * COMPARATOR
+   * COMPARATOR
+   * COMPARATOR
+   * <p>
+   *  Some comparator examples
+   * @see
+   *      <a href="https://mkyong.com/java8/java-8-lambda-comparator-example/">mykong</a>
+   *      <a href="https://stackoverflow.com/questions/20399660/how-to-create-this-java-comparator">stack overflow</a>
+   * </p>
+   * @param objects a list of objects to be sorted
+   */
+
+  private void doSomeWorkWithSort(List<Object> objects) {
+
+    // Way 1
+    if (objects != null && !objects.isEmpty())
+      objects.sort(Comparator.comparingInt(Object::hashCode));
+
+    // Way 2
+    if (objects != null && !objects.isEmpty())
+      objects.sort((Object instance1, Object instance2) -> Integer.compare(instance1.hashCode(), instance2.hashCode()));
+  }
+
+  /**
+   * REGEX
+   * REGEX
+   * REGEX
+   * REGEX
+   * <p>
+   * To work with regex here is an example
+   * <p>
+   * REGEX
+   * REGEX
+   * REGEX
+   * REGEX
+   */
+  private void testRegex() {
+    Pattern pattern = Pattern.compile("^\\d{10}$");
+
+    System.out.println(pattern.matcher("").matches()); //false
+    System.out.println(pattern.matcher("123").matches()); //false
+    System.out.println(pattern.matcher("0000000000").matches()); //true
+    System.out.println(pattern.matcher("0111111111").matches()); //true
+    System.out.println(pattern.matcher(" ").matches()); //false
+    System.out.println(pattern.matcher("dbui23").matches()); //false
+  }
+
+  /**
+   * BINARY SEARCH
+   * BINARY SEARCH
+   * BINARY SEARCH
+   * BINARY SEARCH
+   * <p>
+   * To work with binary search in java
+   * <p>
+   * BINARY SEARCH
+   * BINARY SEARCH
+   * BINARY SEARCH
+   * BINARY SEARCH
+   */
+  private void testBinarySearch() {
+    List<Integer> numbers = new ArrayList<>(Arrays.asList(2, 4, 5, 7, 11, 13, 17, 19, 23, 29));
+
+    System.out.println("index of 1 is " + Collections.binarySearch(numbers, 1));
+    System.out.println("index of 3 is " + Collections.binarySearch(numbers, 3));
+    System.out.println("index of 9 is " + Collections.binarySearch(numbers, 9));
+    System.out.println("index of 4 is " + Collections.binarySearch(numbers, 4));
 
 	/*
 	-----------------------
@@ -239,5 +239,5 @@ fail-fast behavior of iterators should be used only to detect bugs.
 	index of 4 is  1
 
 	*/
-    }
+  }
 }

@@ -47,10 +47,10 @@ docker run \
 
 ```
 docker run -d \
-  --name node-exporter-container \
+  --name BTreeNode-exporter-container \
   --network dev-network \
   -p 9100:9100 \
-  prom/node-exporter
+  prom/BTreeNode-exporter
 ```
 
 # CADVISOR
@@ -117,8 +117,8 @@ docker run -d --name prometheus-container -p 9090:9090 --network dev-network -v 
 container_cpu_usage_seconds_total{name="mysql_container"}
 
 (
-  (1 - rate(node_cpu_seconds_total{job="node", mode="idle", instance="$instance"}[$__interval]))
+  (1 - rate(node_cpu_seconds_total{job="BTreeNode", mode="idle", instance="$instance"}[$__interval]))
 / ignoring(cpu) group_left
-  count without (cpu)( node_cpu_seconds_total{job="node", mode="idle", instance="$instance"})
+  count without (cpu)( node_cpu_seconds_total{job="BTreeNode", mode="idle", instance="$instance"})
 )
 
